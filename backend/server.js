@@ -4,8 +4,11 @@ import { connectDB } from './config/db.js';
 dotenv.config();
 const PORT = process.env.PORT || 3000;
 const app = express();
+import {productsRouter} from './routes/product.js';
 
-app.get('/', (req, res) => {})
+app.use(express.json())
+
+app.use('/api/', productsRouter);
 
 app.listen(3000, () => {
   connectDB();
