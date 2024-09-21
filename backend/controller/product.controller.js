@@ -1,5 +1,4 @@
 import Product from '../model/product.model.js';
-
 export const addProduct = async (req, res) => {
   const {name, price, image } = req.body;
   if (!name || !price || !image) {
